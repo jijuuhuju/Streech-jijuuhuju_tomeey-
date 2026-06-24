@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>streech 7</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- ロード画面 -->
+    <div id="loading-screen">
+        <div class="tower-container">
+            <div class="loading-block block-green"></div>
+            <div class="loading-block block-blue"></div>
+            <div class="loading-block block-orange"></div>
+            <div class="loading-block block-red"></div>
+        </div>
+        <p class="loading-text">streech 7 起動中...</p>
+    </div>
+
+    <!-- アプリ本体 -->
+    <div class="streech-app">
+        <header class="top-bar">
+            <div class="brand-area">
+                <h1 class="logo-v5">streech 7</h1>
+                <div class="file-actions">
+                    <button id="save-btn" class="menu-btn">💾 保存</button>
+                    <input type="file" id="file-load" accept=".json" class="menu-file-input">
+                </div>
+            </div>
+            <div class="system-status">
+                <button id="turbo-btn" class="turbo-btn">⚡ ターボモード</button>
+                <div class="fps-control">
+                    <span id="fps-display">60FPS</span>
+                    <input type="range" id="fps-slider" min="20" max="80" value="60">
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="left-panel">
+                <div class="username-area">
+                    <span>ユーザー名:</span>
+                    <input type="text" id="username-input" value="streech">
+                </div>
+                <div class="block-palette-container">
+                    <button id="close-palette-btn" class="close-tab-btn">✖</button>
+                    <div id="block-palette" class="block-palette">
+                        <p class="section-hint">⚙️ 基本ブロック</p>
+                        <div class="streech-block block-blue-style" data-type="move">10歩動かす</div>
+                        <div class="streech-block block-blue-style" data-type="turn-angle">90度に向ける</div>
+                        <div class="streech-block block-blue-style" data-type="gyro-direction">(スマホの角度)度に向ける</div>
+                        <div class="streech-block block-blue-style" data-type="move-reset">位置をリセット</div>
+                        <div class="streech-block block-purple-style" data-type="stretch-change">伸びを10ずつ変える</div>
+                        <div class="streech-block block-purple-style" data-type="stretch-reset">伸びをリセット</div>
+                        <div class="streech-block block-orange-style" data-type="forever">ずっと ↻</div>
+                    </div>
+                </div>
+                <button id="add-extension-btn" class="extension-btn">📦 拡張機能を追加する</button>
+            </section>
+
+            <section class="right-panel">
+                <div class="stage-controls">
+                    <button id="green-flag">🟩 実行</button>
+                    <button id="stop-all">🛑 停止</button>
+                </div>
+                <div class="stage-canvas">
+                    <div id="food-stage-area"></div>
+                    <div id="stage-actor">
+                        <div class="tomeey-hair"></div>
+                        <div class="tomeey-head">
+                            <div class="tomeey-eye eye-l"></div>
+                            <div class="tomeey-eye eye-r"></div>
+                            <div class="tomeey-beak"></div>
+                        </div>
+                        <div class="tomeey-body" id="tomeey-body-target"></div>
+                        <div class="tomeey-legs"><div class="leg-l"></div><div class="leg-r"></div></div>
+                    </div>
+                </div>
+                <div class="workspace-container">
+                    <div id="workspace" class="workspace"></div>
+                    <p class="workspace-hint">（ここに組み立てたブロックが表示されます）</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
